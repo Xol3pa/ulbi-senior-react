@@ -4,20 +4,21 @@ import { useTheme } from "./providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import './styles/index.scss'
 import { AppRouter } from "./providers/router";
+import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
 
 const App = () => {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', { 'selected': true, 'hovered': true }, [theme])}>
-
-            <button onClick={toggleTheme}>TOGGLE</button>
-
-            <Link to='/about'>AboutPage</Link>
-            <Link to='/'>MainPage</Link>
-            <AppRouter></AppRouter>
-
+            <Navbar />
+            <div className="content-page">
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     )
 }
