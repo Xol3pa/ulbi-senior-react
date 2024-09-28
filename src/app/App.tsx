@@ -1,22 +1,16 @@
-
-import { Link } from "react-router-dom";
-import { useTheme } from "./providers/ThemeProvider";
-import { classNames } from "shared/lib/classNames/classNames";
-import './styles/index.scss'
-import { AppRouter } from "./providers/router";
-import { Navbar } from "widgets/Navbar";
-import { Sidebar } from "widgets/Sidebar";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { Suspense } from "react";
-import { useTranslation } from "react-i18next";
-
-
+import { Suspense } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import './styles/index.scss';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
+import { useTheme } from './providers/ThemeProvider';
+import { AppRouter } from './providers/router';
 
 const App = () => {
     const { theme } = useTheme();
 
     return (
-        <div className={classNames('app', { 'selected': true, 'hovered': true }, [theme])}>
+        <div className={classNames('app', { selected: true, hovered: true }, [theme])}>
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">
@@ -25,7 +19,7 @@ const App = () => {
                 </div>
             </Suspense>
         </div>
-    )
-}
+    );
+};
 
-export default App
+export default App;
