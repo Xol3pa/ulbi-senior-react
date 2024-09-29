@@ -1,37 +1,61 @@
-
 .Loader,
 .Loader div {
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .Loader {
   display: inline-block;
-  transform: translateZ(1px);
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-.Loader > div {
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  background: var(--inverted-bg-color);
+.Loader div {
+  position: absolute;
+  top: 33.33333px;
+  width: 13.33333px;
+  height: 13.33333px;
   border-radius: 50%;
-  animation: Loader 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  background: var(--inverted-bg-color);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
-@keyframes Loader {
-  0%, 100% {
-    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
-  }
+.Loader div:nth-child(1) {
+  left: 8px;
+  animation: Loader1 0.6s infinite;
+}
+.Loader div:nth-child(2) {
+  left: 8px;
+  animation: Loader2 0.6s infinite;
+}
+.Loader div:nth-child(3) {
+  left: 32px;
+  animation: Loader2 0.6s infinite;
+}
+.Loader div:nth-child(4) {
+  left: 56px;
+  animation: Loader3 0.6s infinite;
+}
+@keyframes Loader1 {
   0% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(1800deg);
-    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    transform: scale(0);
   }
   100% {
-    transform: rotateY(3600deg);
+    transform: scale(1);
   }
 }
+@keyframes Loader3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes Loader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
 
