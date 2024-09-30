@@ -37,15 +37,15 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['to', 'href', 'alt', 'title', 'data-testid']
-      }
+        ignoreAttribute: ['to', 'href', 'alt', 'title', 'data-testid'],
+      },
     ],
     'max-len': [
       'error',
       {
         ignoreComments: true,
         code: 100,
-      }
+      },
     ],
     'linebreak-style': 'off',
   },
