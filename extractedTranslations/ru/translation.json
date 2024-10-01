@@ -4,6 +4,10 @@
   "So": "So",
   "Soething went wrong": "Soething went wrong",
   "Something went wrong": "Something went wrong",
+  "navbar": {
+    "about": "about",
+    "main": "main"
+  },
   "{t(": "{t(",
   "Выкинуть ошибку": "Выкинуть ошибку",
   "Главная страница": "Главная страница",
